@@ -1,0 +1,10 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: chatbot
+
+openai:
+  model: text-davinci-003
+  apiKey: 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
