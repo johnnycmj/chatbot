@@ -3,10 +3,7 @@ package com.xiton.chatbot.controller;
 import com.xiton.chatbot.bean.Question;
 import com.xiton.chatbot.service.ChatBotService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author chmj
@@ -22,9 +19,9 @@ public class ChatBotController {
     private ChatBotService chatBotService;
 
 
-    @PostMapping("/answer")
-    public String doAnswer(@RequestBody Question answer) {
-        return chatBotService.completions(answer.getQuestion());
+    @GetMapping("/answer")
+    public String doAnswer(@RequestParam("question") String question) {
+        return chatBotService.completions(question);
     }
 
 }
