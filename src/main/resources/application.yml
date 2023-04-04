@@ -6,5 +6,6 @@ spring:
     name: chatbot
 
 openai:
-  model: text-davinci-003
-  apiKey: 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
+  model: ${OPENAI_MODEL:text-davinci-003}
+  apiKey: ${OPENAI_API_KEY:你的apiKey}
+  
